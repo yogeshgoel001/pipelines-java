@@ -11,6 +11,11 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 steps:
+
+- task: Npm@1
+  inputs:
+    command: 'install'
+    
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -42,8 +47,3 @@ steps:
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
-    
-mvn sonar:sonar \
-  -Dsonar.projectKey=demoproject \
-  -Dsonar.host.url=https://sonarqube-azureappservice7a60.azurewebsites.net \
-  -Dsonar.login=c00b86d15463d79d2f72733de0acd5892dda243e
