@@ -42,6 +42,7 @@ steps:
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
+    
 mvn sonar:sonar \
   -Dsonar.projectKey=demoproject \
   -Dsonar.host.url=https://sonarqube-azureappservice7a60.azurewebsites.net \
