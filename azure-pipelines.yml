@@ -10,7 +10,6 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-
 steps:
 - task: Maven@3
   inputs:
@@ -21,6 +20,11 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: true
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
     goals: 'package'
 - task: PublishCodeCoverageResults@1
   inputs:
