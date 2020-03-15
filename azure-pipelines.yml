@@ -47,11 +47,3 @@ steps:
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
-jobs:
-- job: Build
-  steps:
-  - script: npm install
-  - script: npm run build
-- job: Test
-  steps:
-  - script: npm test
