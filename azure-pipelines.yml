@@ -11,10 +11,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 steps:
-
-- task: Npm@1
-  inputs:
-    command: 'install'
     
 - task: Maven@3
   inputs:
